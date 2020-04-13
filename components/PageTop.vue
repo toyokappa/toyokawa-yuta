@@ -11,7 +11,7 @@
       .job-title Web Engineer, Career Consultant, Event Organizer.
     .facts.container
       .row
-        .col-sm-6
+        .col-lg-6
           .row.mb-3
             .col-sm-3.label PROFILE
             .col-sm-9.value Web Engineer, Career Consultant, Event Organizer.
@@ -66,7 +66,7 @@
             .col-sm-3.label CONTACT
             .col-sm-9
               a.link(href="mailto:info@toyokawa-yuta.com") info@toyokawa-yuta.com
-        .col-sm-6
+        .col-lg-6
           .introduction
             | こんにちは。豊川 雄太です。群馬県渋川市にてWebエンジニア、キャリアコンサルタント、イベント企画など様々など様々なことをしています。
             br
