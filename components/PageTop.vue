@@ -118,7 +118,7 @@
   width: 360px
   margin: 0 auto 180px
   .name
-    font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+    font-family: $ja-accent-family
     font-size: 40px
     letter-spacing: 5px
   .name-alpha
@@ -126,14 +126,14 @@
     letter-spacing: 5px
     margin-bottom: 20px
   .job-title
-    color: grey
+    color: $secondary-grey
     letter-spacing: 3px
     line-height: 1.5
 .facts
   .label
     letter-spacing: 3px
   .value
-    color: grey
+    color: $primary-grey
   .social-profile
     list-style: none
     margin: 0
@@ -142,12 +142,12 @@
       margin-right: 15px
       font-size: 30px
   .link
-    color: #CC9933
+    color: $accent-color
   .skillbar
     position: relative
     width: 100%
     height: 18px
-    background-color: #eee
+    background-color: $muted-color
     border-radius: 3px
     margin-bottom: 20px
     .skillbar-title
@@ -171,12 +171,12 @@
       position: absolute
       top: 0
       right: 15px
-      color: #CC9933
+      color: $accent-color
       font-size: 12px
       font-weight: bold
       background-color: transparent
       z-index: 100
   .introduction
-    color: grey
+    color: $primary-grey
     line-height: 1.7
 </style>

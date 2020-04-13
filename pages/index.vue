@@ -4,16 +4,20 @@
       PageTop
     section.section
       Resume
+    section.section
+      Blog
 </template>
 
 <script>
 import PageTop from '@/components/PageTop'
 import Resume from '@/components/Resume'
+import Blog from '@/components/Blog'
 
 export default {
   components: {
     PageTop,
-    Resume
+    Resume,
+    Blog
   }
 }
 </script>

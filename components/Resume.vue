@@ -50,7 +50,7 @@
     text-align: center
     margin: 150px
     .section-title
-      font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+      font-family: $ja-accent-family
       font-size: 40px
       letter-spacing: 5px
     .section-subtitle
@@ -59,7 +59,7 @@
       letter-spacing: 5px
       margin-bottom: 30px
     .section-description
-      color: grey
+      color: $secondary-grey
       font-size: 18px
       font-weight: normal
   .cv-wrapper
@@ -77,17 +77,17 @@
         border-bottom: 1px solid #eee
         margin-bottom: 30px
         .company
-          font-family: "游明朝", YuMincho, "Hiragino Mincho ProN W3", "ヒラギノ明朝 ProN W3", "Hiragino Mincho ProN", "HG明朝E", "ＭＳ Ｐ明朝", "ＭＳ 明朝", serif
+          font-family: $ja-accent-family
           font-size: 18px
           margin-bottom: 5px
         .profile
-          color: grey
+          color: $primary-grey
           margin-bottom: 3px
         .period
-          color: grey
+          color: $primary-grey
           font-size: 14px
           margin-bottom: 10px
         .description
-          color: grey
+          color: $primary-grey
           line-height: 2
 </style>
