@@ -9,6 +9,72 @@
       .name 豊川 雄太
       .name-alpha Toyokawa Yuta
       .job-title Web Engineer, Career Consultant, Event Organizer.
+    .facts.container
+      .row
+        .col-sm-6
+          .row.mb-3
+            .col-sm-3.label PROFILE
+            .col-sm-9.value Web Engineer, Career Consultant, Event Organizer.
+          .row.mb-3
+            .col-sm-3.label SOCIAL PROFILES
+            .col-sm-9
+              ul.social-profile
+                li.item
+                  a.link(href="#")
+                    i.fab.fa-facebook-square
+                li.item
+                  a.link(href="#")
+                    i.fab.fa-twitter
+                li.item
+                  a.link(href="#")
+                    i.fab.fa-github
+                li.item
+                  a.link(href="#")
+                    i.fab.fa-instagram
+          .row.mb-3
+            .col-sm-3.label SKILLS
+            .col-sm-9
+              .skillbar
+                .skillbar-title HTML5
+                .skillbar-bar(style="width: 100%;")
+                .skillbar-percent 100%
+              .skillbar
+                .skillbar-title CSS3
+                .skillbar-bar(style="width: 90%;")
+                .skillbar-percent 90%
+              .skillbar
+                .skillbar-title JavaScript
+                .skillbar-bar(style="width: 80%;")
+                .skillbar-percent 80%
+              .skillbar
+                .skillbar-title Vue.js
+                .skillbar-bar(style="width: 60%;")
+                .skillbar-percent 60%
+              .skillbar
+                .skillbar-title React.js
+                .skillbar-bar(style="width: 45%;")
+                .skillbar-percent 45%
+              .skillbar
+                .skillbar-title Ruby(Rails)
+                .skillbar-bar(style="width: 80%;")
+                .skillbar-percent 80%
+              .skillbar
+                .skillbar-title AWS
+                .skillbar-bar(style="width: 60%;")
+                .skillbar-percent 60%
+          .row.mb-3
+            .col-sm-3.label CONTACT
+            .col-sm-9
+              a.link(href="mailto:info@toyokawa-yuta.com") info@toyokawa-yuta.com
+        .col-sm-6
+          .introduction
+            | こんにちは。豊川 雄太です。群馬県渋川市にてWebエンジニア、キャリアコンサルタント、イベント企画など様々など様々なことをしています。
+            br
+            br
+            | 「一日一日を楽しく生きる」をモットーに日々を過ごしています。人生の最期は「笑顔で死ぬ」と決めています。こういった考えを原動力として、群馬県渋川市を中心に群馬を盛り上げる活動をしています。
+            br
+            br
+            | 活動内容については、こちらのホームページに掲載しておりますので、是非いちコンテンツとして楽しんでいただけたらと思います。
 </template>
 
 <style lang="sass" scoped>
@@ -63,4 +129,54 @@
     color: grey
     letter-spacing: 3px
     line-height: 1.5
+.facts
+  .label
+    letter-spacing: 3px
+  .value
+    color: grey
+  .social-profile
+    list-style: none
+    margin: 0
+    .item
+      display: inline
+      margin-right: 15px
+      font-size: 30px
+  .link
+    color: #CC9933
+  .skillbar
+    position: relative
+    width: 100%
+    height: 18px
+    background-color: #eee
+    border-radius: 3px
+    margin-bottom: 20px
+    .skillbar-title
+      position: absolute
+      top: -2px
+      left: 15px
+      color: white
+      font-size: 14px
+      font-weight: bold
+      letter-spacing: 3px
+      z-index: 100
+    .skillbar-bar
+      position: absolute
+      top: 0
+      left: 0
+      height: 100%
+      background-color: black
+      border-radius: 3px
+      z-index: 99
+    .skillbar-percent
+      position: absolute
+      top: 0
+      right: 15px
+      color: #CC9933
+      font-size: 12px
+      font-weight: bold
+      background-color: transparent
+      z-index: 100
+  .introduction
+    color: grey
+    line-height: 1.7
 </style>
