@@ -1,9 +1,5 @@
 <template lang="pug">
   .resume
-    h2
-      .section-title キャリアシート
-      .section-subtitle Curriculum Vitae
-      .section-description 私のこれまでの歩み
     .cv-wrapper.container
       .row.cv
         .col-lg-3
@@ -46,22 +42,6 @@
 
 <style lang="sass" scoped>
 .resume
-  h2
-    text-align: center
-    margin: 150px
-    .section-title
-      font-family: $ja-accent-family
-      font-size: 40px
-      letter-spacing: 5px
-    .section-subtitle
-      font-size: 20px
-      font-weight: normal
-      letter-spacing: 5px
-      margin-bottom: 30px
-    .section-description
-      color: $secondary-grey
-      font-size: 18px
-      font-weight: normal
   .cv-wrapper
     .cv
       &:last-of-type
