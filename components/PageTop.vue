@@ -164,7 +164,7 @@
       top: 0
       left: 0
       height: 100%
-      background-color: black
+      background-color: $primary-dark
       border-radius: 3px
       z-index: 99
     .skillbar-percent
@@ -174,7 +174,6 @@
       color: $accent-color
       font-size: 12px
       font-weight: bold
-      background-color: transparent
       z-index: 100
   .introduction
     color: $primary-grey

@@ -45,7 +45,9 @@
     margin-bottom: 5px
   input, textarea
     height: auto
+    background-color: $secondary-dark
     border-radius: 0
+    border: none
     padding: 15px
     margin: 0
     box-shadow: none

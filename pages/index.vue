@@ -16,13 +16,16 @@
         description="最新のチャレンジや動向をコンテンツとしてお届け"
       )
       Blog
-    section.section
+    section.section.section-dark
       SectionHeader(
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="気兼ねなく お気軽に ご連絡ください"
+        titleColor="#CC9933"
+        subtitleColor="white"
       )
       Contact
+    Footer
 </template>
 
 <script>
@@ -31,6 +34,7 @@ import PageTop from '@/components/PageTop'
 import Resume from '@/components/Resume'
 import Blog from '@/components/Blog'
 import Contact from '@/components/Contact'
+import Footer from '@/components/Footer'
 
 export default {
   components: {
@@ -38,7 +42,8 @@ export default {
     PageTop,
     Resume,
     Blog,
-    Contact
+    Contact,
+    Footer
   }
 }
 </script>
@@ -46,5 +51,7 @@ export default {
 <style lang="sass">
 #wrapper
   .section
-    margin-bottom: 180px
+    padding-bottom: 100px
+  .section-dark
+    background-color: $primary-dark
 </style>

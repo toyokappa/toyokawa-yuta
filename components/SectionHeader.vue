@@ -1,7 +1,7 @@
 <template lang="pug">
   .section-header
-    .section-title {{ title }}
-    .section-subtitle {{ subtitle }}
+    .section-title(:style="`color: ${titleColor};`") {{ title }}
+    .section-subtitle(:style="`color: ${subtitleColor};`") {{ subtitle }}
     .section-description {{ description }}
 </template>
 
@@ -19,6 +19,14 @@ export default {
     description: {
       type: String,
       require: true
+    },
+    titleColor: {
+      type: String,
+      default: 'black'
+    },
+    subtitleColor: {
+      type: String,
+      default: 'black'
     }
   }
 }
@@ -27,7 +35,8 @@ export default {
 <style lang="sass" scoped>
 .section-header
   text-align: center
-  margin: 150px
+  padding-top: 80px
+  padding-bottom: 150px
   .section-title
     font-family: $ja-accent-family
     font-size: 40px
