@@ -43,13 +43,14 @@ export default {
     letter-spacing: 5px
     margin-bottom: 0
   .section-subtitle
+    font-family: $en-accent-family
     font-size: 20px
     font-weight: normal
-    letter-spacing: 5px
+    letter-spacing: 4px
     margin-bottom: 30px
   .section-description
     color: $secondary-grey
-    font-size: 18px
+    font-size: 16px
     font-weight: normal
     letter-spacing: 3px
 </style>

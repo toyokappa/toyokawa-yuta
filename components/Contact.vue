@@ -75,6 +75,7 @@
     display: block
     background-color: #fa4f3e
     color: white
+    font-family: $en-accent-family
     font-size: 15px
     letter-spacing: 3px
     border: none

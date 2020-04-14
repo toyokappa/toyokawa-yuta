@@ -95,15 +95,17 @@
     left: 50%
     transform: translateX(-50%) translateY(-50%)
     color: white
+    font-family: $en-accent-family
     text-align: center
-    letter-spacing: 5px
     width: 100%
     margin: auto
     .title
-      font-size: 80px
+      font-size: 60px
       font-weight: bold
+      letter-spacing: 5px
     .subtitle
       font-size: 24px
+      letter-spacing: 3px
   .user-icon
     position: absolute
     bottom: -75px
@@ -117,6 +119,7 @@
     background-size:  cover
     background-position: center center
 .profile
+  font-family: $en-accent-family
   text-align: center
   width: 360px
   margin: 0 auto 180px
@@ -126,14 +129,14 @@
     letter-spacing: 5px
   .name-alpha
     font-size: 20px
-    letter-spacing: 5px
+    letter-spacing: 4px
     margin-bottom: 20px
   .job-title
     color: $secondary-grey
     letter-spacing: 3px
-    line-height: 1.5
 .facts
   .label
+    font-family: $en-accent-family
     letter-spacing: 3px
   .value
     color: $primary-grey
@@ -155,11 +158,10 @@
     margin-bottom: 20px
     .skillbar-title
       position: absolute
-      top: -2px
+      top: -1px
       left: 15px
       color: white
-      font-size: 14px
-      font-weight: bold
+      font-family: $en-accent-family
       letter-spacing: 3px
       z-index: 100
     .skillbar-bar
@@ -175,6 +177,7 @@
       top: 0
       right: 15px
       color: $accent-color
+      font-family: $en-accent-family
       font-size: 12px
       font-weight: bold
       z-index: 100

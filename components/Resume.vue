@@ -49,6 +49,7 @@
           border-bottom: none
           margin-bottom: none
       .headline-title
+        font-family: $en-accent-family
         font-size: 20px
         font-weight: normal
         letter-spacing: 3px

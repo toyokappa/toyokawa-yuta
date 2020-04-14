@@ -14,7 +14,8 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' },
-      { rel: "stylesheet", href:"https://use.fontawesome.com/releases/v5.6.1/css/all.css" }
+      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' }
     ]
   },
   /*
