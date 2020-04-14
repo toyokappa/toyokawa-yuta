@@ -65,9 +65,6 @@
         height: 300px
         background-size: cover
         background-position: center center
-        transition: 0.3s
-        &:hover
-          opacity: 0.7
       .header
         margin-bottom: 20px
         .title
@@ -76,9 +73,6 @@
           font-family: $ja-accent-family
           font-size: 20px
           text-decoration: none
-          transition: 0.3s
-          &:hover
-            opacity: 0.7
         .created-at
           color: $secondary-grey
           font-size: 14px

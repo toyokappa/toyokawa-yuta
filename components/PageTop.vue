@@ -21,13 +21,16 @@
               ul.social-profile
                 li.item
                   a.link(href="#")
+                    i.fab.fa-github
+                li.item
+                  a.link(href="#")
                     i.fab.fa-facebook-square
                 li.item
                   a.link(href="#")
                     i.fab.fa-twitter
                 li.item
                   a.link(href="#")
-                    i.fab.fa-github
+                    i.fab.fa-youtube
                 li.item
                   a.link(href="#")
                     i.fab.fa-instagram
