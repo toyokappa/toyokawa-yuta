@@ -11,8 +11,10 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "bootstrap": "^4.4.1",
     "nuxt": "^2.0.0",
-    "ress": "^2.0.4"
+    "ress": "^2.0.4",
+    "vue-tasty-burgers": "^1.1.8"
   },
   "devDependencies": {
     "@nuxtjs/style-resources": "^1.0.0",

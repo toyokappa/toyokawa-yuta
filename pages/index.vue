@@ -1,5 +1,6 @@
 <template lang="pug">
   #wrapper
+    Header
     section.section
       PageTop
     section.section
@@ -29,6 +30,7 @@
 </template>
 
 <script>
+import Header from '@/components/Header'
 import SectionHeader from '@/components/SectionHeader'
 import PageTop from '@/components/PageTop'
 import Resume from '@/components/Resume'
@@ -38,6 +40,7 @@ import Footer from '@/components/Footer'
 
 export default {
   components: {
+    Header,
     SectionHeader,
     PageTop,
     Resume,

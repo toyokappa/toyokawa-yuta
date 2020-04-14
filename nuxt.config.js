@@ -13,7 +13,6 @@ export default {
     ],
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
-      { rel: 'stylesheet', href: 'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css' },
       { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' }
     ]
@@ -26,12 +25,14 @@ export default {
   ** Global CSS
   */
   css: [
-    'ress'
+    'ress',
+    'bootstrap/scss/bootstrap.scss'
   ],
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    { src: '~/plugins/burgerButton.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
@@ -46,7 +47,7 @@ export default {
   ],
   styleResources: {
     sass: [
-      '@/assets/constants.sass'
+      '@/assets/sass/constants.sass'
     ]
   },
   /*
