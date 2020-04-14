@@ -37,6 +37,22 @@
               )
                 i.fas.fa-check.mr-2
                 | SUBMIT
+      ul.social-links
+        li.item
+          a.link(href="#")
+            i.fab.fa-github
+        li.item
+          a.link(href="#")
+            i.fab.fa-facebook-square
+        li.item
+          a.link(href="#")
+            i.fab.fa-twitter
+        li.item
+          a.link(href="#")
+            i.fab.fa-youtube
+        li.item
+          a.link(href="#")
+            i.fab.fa-instagram
 </template>
 
 <style lang="sass" scoped>
@@ -64,4 +80,14 @@
     border: none
     padding: 15px 25px
     margin-left: auto
+  .social-links
+    list-style: none
+    text-align: center
+    margin-top: 60px
+    .item
+      display: inline
+      font-size: 36px
+      margin: 0 15px
+      .link
+        color: $primary-grey
 </style>
