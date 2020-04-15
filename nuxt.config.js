@@ -17,6 +17,14 @@ export default {
       { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' }
     ]
   },
+  env: {
+    firebaseApiKey: process.env.FIREBASE_API_KEY,
+    firebaseAuthDomain: process.env.FIREBASE_AUTH_DOMAIN,
+    firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL,
+    firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
+    firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
+    firebaseMessageingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+  },
   /*
   ** Customize the progress-bar color
   */
@@ -31,7 +39,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    { src: '~/plugins/burgerButton.js', ssr: false }
+    { src: '~/plugins/burgerButton.js', ssr: false },
+    { src: '~/plugins/firebaseFunctions.js' },
   ],
   /*
   ** Nuxt.js dev-modules
