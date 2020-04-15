@@ -1,11 +1,11 @@
 <template lang="pug">
   .welcome
-    .page-top
+    #pageTop.page-top
       .top-text
         .title I'M TOYOKAWA YUTA
         .subtitle Web Engineer
       .user-icon
-    .profile
+    #profile.profile
       .name 豊川 雄太
       .name-alpha Toyokawa Yuta
       .job-title Web Engineer, Career Consultant, Event Organizer.
@@ -88,7 +88,7 @@
   background-image: url("~assets/page_top.jpg")
   background-size: cover
   background-position: center center
-  margin-bottom: 180px
+  margin-bottom: 100px
   .top-text
     position: absolute
     top: 50%
@@ -123,6 +123,7 @@
   text-align: center
   width: 360px
   margin: 0 auto 180px
+  padding-top: 80px
   .name
     font-family: $ja-accent-family
     font-size: 40px

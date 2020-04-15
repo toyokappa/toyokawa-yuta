@@ -4,21 +4,21 @@
     section.section
       PageTop
     section.section
-      SectionHeader(
+      SectionHeader#carriculum(
         title="キャリアシート"
         subtitle="Carriculum Vitae"
         description="私のこれまでの歩み"
       )
       Resume
     section.section
-      SectionHeader(
+      SectionHeader#blog(
         title="最新ブログ記事"
         subtitle="Recent Blog Posts"
         description="最新のチャレンジや動向をコンテンツとしてお届け"
       )
       Blog
     section.section.section-dark
-      SectionHeader(
+      SectionHeader#contact(
         title="お問い合わせ"
         subtitle="Get In Touch"
         description="気兼ねなく お気軽に ご連絡ください"

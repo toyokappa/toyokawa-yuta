@@ -1,7 +1,7 @@
 <template lang="pug">
   header.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top.header-nav
     nav.container
-      a.navbar-brand.logo(href="#") TOYOKAWA
+      n-link.navbar-brand.logo(v-scroll-to="'#pageTop'" to) TOYOKAWA
       .toggle-button
         client-only
           tasty-burger-button(
@@ -13,33 +13,37 @@
           )
       .collapse-menu
         ul.navbar-nav.ml-auto
-          li.nav-item.active
-            a.nav-link(href="#") PROFILE
           li.nav-item
-            a.nav-link(href="#") CARRICULUM
+            n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
           li.nav-item
-            a.nav-link(href="#") BLOG
+            n-link.nav-link(v-scroll-to="'#carriculum'" to) CARRICULUM
           li.nav-item
-            a.nav-link(href="#") CONTACT
+            n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
+          li.nav-item
+            n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
     #navbarMenu.container
       ul.navbar-nav(@click="toggleActive")
         li.nav-item.active
-          a.nav-link(href="#") PROFILE
+          n-link.nav-link(v-scroll-to="'#profile'" to) PROFILE
         li.nav-item
-          a.nav-link(href="#") CARRICULUM
+          n-link.nav-link(v-scroll-to="'#carriculum'" to) CARRICULUM
         li.nav-item
-          a.nav-link(href="#") BLOG
+          n-link.nav-link(v-scroll-to="'#blog'" to) BLOG
         li.nav-item
-          a.nav-link(href="#") CONTACT
+          n-link.nav-link(v-scroll-to="'#contact'" to) CONTACT
 </template>
 
 <script>
 export default {
+  data () {
+    return {
+      activeLink: ''
+    }
+  },
   methods: {
     toggleNavMenu (active) {
       const nav = document.querySelector('#navbarMenu')
       active ? nav.classList.add('visible') : nav.classList.remove('visible')
-      
     },
     toggleActive () {
       this.$refs.burgerButton.toggle()

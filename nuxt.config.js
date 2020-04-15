@@ -42,7 +42,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/style-resources'
+    '@nuxtjs/style-resources',
+    ['vue-scrollto/nuxt', { duration: 500 }]
   ],
   styleResources: {
     sass: [
