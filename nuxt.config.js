@@ -34,6 +34,7 @@ export default {
   */
   css: [
     'ress',
+    'github-markdown-css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -53,6 +54,7 @@ export default {
   modules: [
     '@nuxtjs/style-resources',
     '@nuxtjs/toast',
+    '@nuxtjs/markdownit',
     ['vue-scrollto/nuxt', { duration: 500 }]
   ],
   styleResources: {
@@ -80,4 +82,7 @@ export default {
       }
     }
   },
+  markdownit: {
+    injected: true
+  }
 }

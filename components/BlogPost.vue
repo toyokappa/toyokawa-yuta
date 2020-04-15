@@ -12,12 +12,20 @@
               i.far.fa-calendar-alt.mr-2
               | 2020.04.13
           .blog-post-body
-            .body
-              | どうもこんにちは。考えるスイッチが一度入るとなかなか抜け出せなくなってしまう豊川です。
-              br
-              br
-              | 今回は行動も大事だけど、プロセスをしっかりと考えることも非常に重要である、といったことについて話していきたいと思います。
+            .markdown-body(v-html="$md.render(text)")
 </template>
+
+<script>
+import text from '!raw-loader!@/assets/test.txt'
+
+export default {
+  data () {
+    return {
+      text
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .blog
@@ -43,7 +51,7 @@
         .created-at
           color: $secondary-grey
           font-size: 14px
-      .body
+      .markdown-body
         color: $primary-grey
         font-size: 16px
         line-height: 2
