@@ -26,7 +26,6 @@ export default {
   */
   css: [
     'ress',
-    'bootstrap/scss/bootstrap.scss'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -47,7 +46,8 @@ export default {
   ],
   styleResources: {
     sass: [
-      '@/assets/sass/constants.sass'
+      '@/assets/sass/constants.sass',
+      '@/assets/sass/plugins.sass'
     ]
   },
   /*
