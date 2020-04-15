@@ -23,7 +23,9 @@ export default {
     firebaseDatabaseURL: process.env.FIREBASE_DATABASE_URL,
     firebaseProjectId: process.env.FIREBASE_PROJECT_ID,
     firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
-    firebaseMessageingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID
+    firebaseMessageingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
+    ctfSpaceId: process.env.CTF_SPACE_ID,
+    ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
   },
   /*
   ** Customize the progress-bar color
@@ -41,6 +43,8 @@ export default {
   */
   plugins: [
     { src: '~/plugins/burgerButton.js', ssr: false },
+    { src: '~/plugins/contentful.js' },
+    { src: '~/plugins/dateFormat.js' },
     { src: '~/plugins/firebaseFunctions.js' },
   ],
   /*

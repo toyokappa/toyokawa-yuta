@@ -1,58 +1,39 @@
 <template lang="pug">
   .blog
     .blog-wrapper.container
-      .row.blog-post
-        .col-lg-6
-          a.image(
-            href="#"
-            style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/blog/blog-1.jpg)"
+      .row.blog-post(v-for="(post, index) in blogPosts")
+        .col-lg-6(:class="index % 2 == 0 ? 'order-lg-1' : 'order-lg-2'")
+          n-link.image(
+            :to="`/blogs/${post.fields.slug}`"
+            :style="`background-image: url(${post.fields.eyecatch.fields.file.url})`"
           )
-        .col-lg-6
+        .col-lg-6(:class="index % 2 == 0 ? 'order-lg-2' : 'order-lg-1'")
           .header
-            a.title(href="#") プロセスを見極めろ！
+            n-link.title(:to="`/blogs/${post.fields.slug}`") {{ post.fields.title }}
             .created-at
               i.far.fa-calendar-alt.mr-2
-              | 2020.04.13
-          .body
-            | どうもこんにちは。考えるスイッチが一度入るとなかなか抜け出せなくなってしまう豊川です。
-            br
-            br
-            | 今回は行動も大事だけど、プロセスをしっかりと考えることも非常に重要である、といったことについて話していきたいと思います。
-      .row.blog-post
-        .col-lg-6.order-lg-2
-          a.image(
-            href="#"
-            style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/blog/blog-3.jpg)"
-          )
-        .col-lg-6.order-lg-1
-          .header
-            a.title(href="#") 人脈の上手な使い方
-            .created-at
-              i.far.fa-calendar-alt.mr-2
-              | 2020.04.11
-          .body
-            | どうもこんにちは。群馬に来て以来ここ最近おもしろい友達が増えてきたなぁと感じる豊川です。
-            br
-            br
-            | 突然ですが、皆さんは「人脈」と聞いたときに、パッと何人くらい思いつきますか？
-      .row.blog-post
-        .col-lg-6
-          a.image(
-            href="#"
-            style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/portfolio/port-6.jpg)"
-          )
-        .col-lg-6
-          .header
-            a.title(href="#") 地方で未経験からエンジニアになるための考え方
-            .created-at
-              i.far.fa-calendar-alt.mr-2
-              | 2020.04.9
-          .body
-            | どうもこんにちは。群馬県という片田舎でなんとか食らいついてWebエンジニアをやっている豊川です。
-            br
-            br
-            | 前職がキャリアコンサルタントだったこともあり、現在は未経験からエンジニアになりたい人たちの無料相談をやっているのですが...
+              span {{ parseCreatedAt(post.sys.createdAt) }}
+          .body(v-html="parseDescription(post.fields.description)")
 </template>
+
+<script>
+export default {
+  props: {
+    blogPosts: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    parseDescription (text) {
+      return text.replace(/\n/g, '<br>')
+    },
+    parseCreatedAt (datetime) {
+      return this.$dateFormat(datetime, 'yyyy.MM.dd')
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .blog

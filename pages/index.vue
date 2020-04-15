@@ -16,7 +16,7 @@
         subtitle="Recent Blog Posts"
         description="最新のチャレンジや動向をコンテンツとしてお届け"
       )
-      Blog
+      Blog(:blogPosts="blogPosts")
     section.section.section-dark
       SectionHeader#contact(
         title="お問い合わせ"
@@ -47,6 +47,18 @@ export default {
     Blog,
     Contact,
     Footer
+  },
+  async asyncData ({ app }) {
+    const blogRes = await app.$ctfClient.getEntries({
+      content_type: 'blog',
+      order: '-sys.createdAt',
+      limit: 3
+    })
+    const blogPosts = blogRes.items
+
+    return {
+      blogPosts
+    }
   }
 }
 </script>
