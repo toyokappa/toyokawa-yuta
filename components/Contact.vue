@@ -39,19 +39,19 @@
                 | SUBMIT
       ul.social-links
         li.item
-          a.link(href="#")
+          a.link(href="https://github.com/toyokappa" target="new")
             i.fab.fa-github
         li.item
-          a.link(href="#")
+          a.link(href="https://www.facebook.com/yuta.toyokawa" target="new")
             i.fab.fa-facebook-square
         li.item
-          a.link(href="#")
+          a.link(href="https://twitter.com/toyokappa" target="new")
             i.fab.fa-twitter
         li.item
-          a.link(href="#")
+          a.link(href="https://www.youtube.com/channel/UCFecawOb06qA62iYfVQmteA" target="new")
             i.fab.fa-youtube
         li.item
-          a.link(href="#")
+          a.link(href="instagram.com/yuta_toyokawa" target="new")
             i.fab.fa-instagram
 </template>
 
