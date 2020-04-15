@@ -2,12 +2,12 @@
   .blog
     .blog-wrapper.container
       .row.blog-post
-        .col-md-6
+        .col-lg-6
           a.image(
             href="#"
             style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/blog/blog-1.jpg)"
           )
-        .col-md-6
+        .col-lg-6
           .header
             a.title(href="#") プロセスを見極めろ！
             .created-at
@@ -19,12 +19,12 @@
             br
             | 今回は行動も大事だけど、プロセスをしっかりと考えることも非常に重要である、といったことについて話していきたいと思います。
       .row.blog-post
-        .col-md-6.order-md-2
+        .col-lg-6.order-lg-2
           a.image(
             href="#"
             style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/blog/blog-3.jpg)"
           )
-        .col-md-6.order-md-1
+        .col-lg-6.order-lg-1
           .header
             a.title(href="#") 人脈の上手な使い方
             .created-at
@@ -36,12 +36,12 @@
             br
             | 突然ですが、皆さんは「人脈」と聞いたときに、パッと何人くらい思いつきますか？
       .row.blog-post
-        .col-md-6
+        .col-lg-6
           a.image(
             href="#"
             style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/portfolio/port-6.jpg)"
           )
-        .col-md-6
+        .col-lg-6
           .header
             a.title(href="#") 地方で未経験からエンジニアになるための考え方
             .created-at
@@ -62,7 +62,7 @@
       .image
         display: block
         width: 100%
-        height: 300px
+        padding-bottom: 60%
         background-size: cover
         background-position: center center
       .header
