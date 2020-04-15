@@ -72,15 +72,18 @@ export default {
   methods: {
     async sendMail (e) {
       e.preventDefault()
+      this.$nuxt.$loading.start()
       const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
       try {
         await mailer(this.contactForm)
-        // this.$toast.success('お問い合わせを受け付けました。ありがとうございました。', { duration: 5000 })
+        this.$toast.success('お問い合わせを受け付けました。ありがとうございました。', { duration: 5000 })
         this.resetForm()
       } catch (err) {
-        // this.$toast.error('お問い合わせに失敗しました。時間をおいて再度お試しください。', { duration: 5000 })
+        this.$toast.error('お問い合わせに失敗しました。時間をおいて再度お試しください。', { duration: 5000 })
         console.log(err)
         throw err
+      } finally {
+        this.$nuxt.$loading.finish()
       }
     },
     resetForm () {
@@ -96,6 +99,7 @@ export default {
     margin-bottom: 5px
   input, textarea
     height: auto
+    color: white !important
     background-color: $secondary-dark
     border-radius: 0
     border: none

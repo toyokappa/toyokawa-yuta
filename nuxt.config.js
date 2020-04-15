@@ -52,6 +52,7 @@ export default {
   */
   modules: [
     '@nuxtjs/style-resources',
+    '@nuxtjs/toast',
     ['vue-scrollto/nuxt', { duration: 500 }]
   ],
   styleResources: {
@@ -69,5 +70,14 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  toast: {
+    position: 'bottom-center',
+    action: {
+      text: '閉じる',
+      onClick (_e, toastObject) {
+        toastObject.goAway(0)
+      }
+    }
+  },
 }
