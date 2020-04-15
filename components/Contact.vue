@@ -3,7 +3,7 @@
     .contact-wrapper.container
       .row
         .offset-lg-3.offset-md-2.col-lg-6.col-md-8
-          form.contact-form
+          form.contact-form(@submit="sendMail")
             .form-group
               label.sr-only(for="inputName") Name
               input.form-control(
@@ -11,6 +11,7 @@
                 placeholder="Name"
                 name="inputName"
                 id="inputName"
+                v-model="contactForm.name"
                 required
               )
             .form-group
@@ -20,6 +21,7 @@
                 placeholder="E-mail"
                 name="inputEmail"
                 id="inputEmail"
+                v-model="contactForm.email"
                 required
               )
             .form-group
@@ -29,6 +31,7 @@
                 name="inputMessage"
                 id="inputMessage"
                 rows="5"
+                v-model="contactForm.message"
               )
             .button-area
               button.btn.btn-default.btn-submit(
@@ -55,6 +58,38 @@
             i.fab.fa-instagram
 </template>
 
+<script>
+export default {
+  data () {
+    return {
+      contactForm: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  methods: {
+    async sendMail (e) {
+      e.preventDefault()
+      const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
+      try {
+        await mailer(this.contactForm)
+        // this.$toast.success('お問い合わせを受け付けました。ありがとうございました。', { duration: 5000 })
+        this.resetForm()
+      } catch (err) {
+        // this.$toast.error('お問い合わせに失敗しました。時間をおいて再度お試しください。', { duration: 5000 })
+        console.log(err)
+        throw err
+      }
+    },
+    resetForm () {
+      this.contactForm = { name: '', email: '', message: '' }
+    }
+  }
+}
+</script>
+
 <style lang="sass" scoped>
 .contact
   .form-group
@@ -70,6 +105,8 @@
     resize: none
     outline: none
     &:focus
+      background-color: $secondary-dark
+      box-shadow: none
       outline: none
   .btn-submit
     display: block
