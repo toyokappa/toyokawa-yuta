@@ -25,14 +25,14 @@ export default {
     }
   },
   methods: {
-    parseDescription (text) {
-      return text.replace(/\n/g, '<br>')
+    parseDescription(text) {
+      return text.replace(/\n/g, "<br>");
     },
-    parseCreatedAt (datetime) {
-      return this.$dateFormat(datetime, 'yyyy.MM.dd')
+    parseCreatedAt(datetime) {
+      return this.$dateFormat(datetime, "yyyy.MM.dd");
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -46,6 +46,9 @@ export default {
         padding-bottom: 60%
         background-size: cover
         background-position: center center
+      @include media-breakpoint-down(md)
+        .image
+          margin-bottom: 10px
       .header
         margin-bottom: 20px
         .title
@@ -53,7 +56,9 @@ export default {
           color: black
           font-family: $ja-accent-family
           font-size: 20px
+          line-height: 1
           text-decoration: none
+          margin-bottom: 3px
         .created-at
           color: $secondary-grey
           font-size: 14px
