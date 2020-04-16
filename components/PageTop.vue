@@ -65,7 +65,7 @@
                 .skillbar-title AWS
                 .skillbar-bar(style="width: 60%;")
                 .skillbar-percent 60%
-          .row.mb-3
+          //.row.mb-3
             .col-sm-3.label CONTACT
             .col-sm-9
               a.link(href="mailto:info@toyokawa-yuta.com") info@toyokawa-yuta.com
