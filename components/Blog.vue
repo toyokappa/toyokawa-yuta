@@ -56,7 +56,7 @@ export default {
           color: black
           font-family: $ja-accent-family
           font-size: 20px
-          line-height: 1
+          line-height: 1.2
           text-decoration: none
           margin-bottom: 3px
         .created-at
