@@ -12,7 +12,7 @@
             n-link.title(:to="`/blogs/${post.fields.slug}`") {{ post.fields.title }}
             .created-at
               i.far.fa-calendar-alt.mr-2
-              span {{ parseCreatedAt(post.sys.createdAt) }}
+              span {{ parseCreatedAt(post.fields.publishedAt) }}
           .body(v-html="parseDescription(post.fields.description)")
 </template>
 

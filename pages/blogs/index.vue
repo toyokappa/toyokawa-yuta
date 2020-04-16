@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import BlogHeader from '@/components/BlogHeader'
-import BlogTitle from '@/components/BlogTitle'
-import Blog from '@/components/Blog'
-import SectionHeader from '@/components/SectionHeader'
-import Contact from '@/components/Contact'
-import Footer from '@/components/Footer'
+import BlogHeader from "@/components/BlogHeader";
+import BlogTitle from "@/components/BlogTitle";
+import Blog from "@/components/Blog";
+import SectionHeader from "@/components/SectionHeader";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
 
 export default {
   components: {
@@ -33,24 +33,24 @@ export default {
     Contact,
     Footer
   },
-  async asyncData ({ app }) {
+  async asyncData({ app }) {
     const blogRes = await app.$ctfClient.getEntries({
-      content_type: 'blog',
-      order: '-sys.createdAt',
+      content_type: "blog",
+      order: "-fields.publishedAt",
       limit: 10
-    })
-    const blogPosts = blogRes.items
+    });
+    const blogPosts = blogRes.items;
 
     return {
       blogPosts
-    }
+    };
   },
-  head () {
+  head() {
     return {
-      title: '豊川 雄太 Official Blog'
-    }
+      title: "豊川 雄太 Official Blog"
+    };
   }
-}
+};
 </script>
 
 <style lang="sass">

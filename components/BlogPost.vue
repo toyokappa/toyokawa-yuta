@@ -10,7 +10,7 @@
             h1.title {{ blogPost.fields.title }}
             .created-at
               i.far.fa-calendar-alt.mr-2
-              span {{ parseCreatedAt(blogPost.sys.createdAt) }}
+              span {{ parseCreatedAt(blogPost.fields.publishedAt) }}
           .blog-post-body
             .markdown-body(v-html="$md.render(blogPost.fields.body)")
 </template>
