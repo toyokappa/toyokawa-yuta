@@ -13,13 +13,14 @@ export default {
       { name: 'theme-color', content: '#1f2233' },
     ],
     link: [
-      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png'},
+      { rel: 'apple-touch-icon', sizes: '180x180', href: '/apple-touch-icon.png' },
       { rel: 'icon', type: 'image/png', sizes: '32x32', href: '/favicon-32x32.png' },
       { rel: 'icon', type: 'image/png', sizes: '16x16', href: '/favicon-16x16.png' },
       { rel: 'manifest', href: '/site.webmanifest' },
       { rel: 'mask-icon', href: 'safari-pinned-tab.svg', color: '#5bbad5' },
-      { rel: 'stylesheet', href:'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
-      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' }
+      { rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.6.1/css/all.css' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat:400,700%7cOpen+Sans:100,200,300,400,700' },
+      { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Sawarabi+Mincho' }
     ]
   },
   env: {
@@ -79,14 +80,14 @@ export default {
     /*
     ** You can extend webpack config here
     */
-    extend (config, ctx) {
+    extend(config, ctx) {
     }
   },
   toast: {
     position: 'bottom-center',
     action: {
       text: '閉じる',
-      onClick (_e, toastObject) {
+      onClick(_e, toastObject) {
         toastObject.goAway(0)
       }
     }
