@@ -3,7 +3,7 @@
     BlogHeader
     section.section
       BlogTitle
-      BlogPost
+      BlogPost(:blogPost="blogPost")
     section.section.section-dark
       SectionHeader(
         title="お問い合わせ"
@@ -32,6 +32,17 @@ export default {
     SectionHeader,
     Contact,
     Footer
+  },
+  async asyncData ({ app, params }) {
+    const blogRes = await app.$ctfClient.getEntries({
+      content_type: 'blog',
+      'fields.slug': params.slug,
+    })
+    const blogPost = blogRes.items[0]
+
+    return {
+      blogPost
+    }
   }
 }
 </script>

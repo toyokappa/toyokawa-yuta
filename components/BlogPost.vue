@@ -5,23 +5,27 @@
         .offset-1.col-10
           .blog-post-header
             .image(
-              style="background-image: url(http://themes.createbrilliance.com/Slamr/theme/img/blog/blog-1.jpg)"
+              :style="`background-image: url(${blogPost.fields.eyecatch.fields.file.url})`"
             )
-            h1.title プロセスを見極めろ！
+            h1.title {{ blogPost.fields.title }}
             .created-at
               i.far.fa-calendar-alt.mr-2
-              | 2020.04.13
+              span {{ parseCreatedAt(blogPost.sys.createdAt) }}
           .blog-post-body
-            .markdown-body(v-html="$md.render(text)")
+            .markdown-body(v-html="$md.render(blogPost.fields.body)")
 </template>
 
 <script>
-import text from '!raw-loader!@/assets/test.txt'
-
 export default {
-  data () {
-    return {
-      text
+  props: {
+    blogPost: {
+      type: Object,
+      required: true
+    }
+  },
+  methods: {
+    parseCreatedAt (datetime) {
+      return this.$dateFormat(datetime, 'yyyy.MM.dd')
     }
   }
 }
