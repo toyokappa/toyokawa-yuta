@@ -65,6 +65,7 @@ export default {
     '@nuxtjs/style-resources',
     '@nuxtjs/toast',
     '@nuxtjs/markdownit',
+    '@nuxtjs/sitemap',
     ['vue-scrollto/nuxt', { duration: 500 }]
   ],
   styleResources: {
@@ -94,5 +95,23 @@ export default {
   },
   markdownit: {
     injected: true
+  },
+  sitemap: {
+    path: '/sitemap.xml',
+    hostname: 'https://toyokawa-yuta.com',
+    gzip: true,
+    async routes() {
+      const contentful = require('contentful')
+      const client = contentful.createClient({
+        space: process.env.CTF_SPACE_ID,
+        accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+      })
+      const blogPosts = await client.getEntries({
+        content_type: 'blog',
+        order: '-sys.createdAt'
+      })
+      const urls = blogPosts.items.map(item => `/blogs/${item.fields.slug}`)
+      return urls
+    }
   }
 }
