@@ -59,6 +59,11 @@ export default {
     return {
       blogPosts
     }
+  },
+  head () {
+    return {
+      title: '豊川 雄太 Official Site'
+    }
   }
 }
 </script>

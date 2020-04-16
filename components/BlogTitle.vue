@@ -1,8 +1,8 @@
 <template lang="pug">
   .section-header
-    h1.section-title
+    .section-title
       n-link(to="/blogs") グンマー帝国ブログ
-    .section-subtitle Toyokawa Yuta Official Blog
+    h1.section-subtitle Toyokawa Yuta Official Blog
     .section-description 最新のチャレンジや動向をコンテンツとしてお届け
 </template>
 

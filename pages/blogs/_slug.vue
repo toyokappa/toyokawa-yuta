@@ -43,6 +43,11 @@ export default {
     return {
       blogPost
     }
+  },
+  head () {
+    return {
+      title: `豊川 雄太 Official Blog | ${this.blogPost.fields.title}`
+    }
   }
 }
 </script>
