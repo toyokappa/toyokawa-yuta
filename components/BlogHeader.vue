@@ -10,4 +10,7 @@
 <style lang="sass" scoped>
 .header-nav
   font-family: $en-accent-family
+  @include media-breakpoint-down(xs)
+    .navbar-brand
+      font-size: 12px
 </style>

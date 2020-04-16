@@ -22,14 +22,14 @@ export default {
     },
     titleColor: {
       type: String,
-      default: 'black'
+      default: "black"
     },
     subtitleColor: {
       type: String,
-      default: 'black'
+      default: "black"
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -39,7 +39,6 @@ export default {
   padding-bottom: 150px
   .section-title
     font-family: $ja-accent-family
-    font-size: 40px
     letter-spacing: 5px
     margin-bottom: 0
   .section-subtitle
@@ -53,4 +52,15 @@ export default {
     font-size: 16px
     font-weight: normal
     letter-spacing: 3px
+  @include media-breakpoint-up(sm)
+    .section-title
+      font-size: 40px
+    .section-description
+      font-size: 16px
+  @include media-breakpoint-down(xs)
+    .section-title
+      font-size: 36px
+    .section-description
+      font-size: 14px
+      padding: 0 10px
 </style>

@@ -3,7 +3,7 @@
     #pageTop.page-top
       .top-text
         .title I'M TOYOKAWA YUTA
-        .subtitle Web Engineer
+        .subtitle Official Site
       .user-icon
     #profile.profile
       .name 豊川 雄太
@@ -99,13 +99,22 @@
     text-align: center
     width: 100%
     margin: auto
-    .title
-      font-size: 60px
-      font-weight: bold
-      letter-spacing: 5px
-    .subtitle
-      font-size: 24px
-      letter-spacing: 3px
+    @include media-breakpoint-up(sm)
+      .title
+        font-size: 60px
+        font-weight: bold
+        letter-spacing: 5px
+      .subtitle
+        font-size: 24px
+        letter-spacing: 3px
+    @include media-breakpoint-down(xs)
+      .title
+        font-size: 42px
+        font-weight: bold
+        letter-spacing: 5px
+      .subtitle
+        font-size: 16px
+        letter-spacing: 3px
   .user-icon
     position: absolute
     bottom: -75px
@@ -116,12 +125,12 @@
     border-radius: 50%
     border: 3px solid white
     background-image: url("~assets/user_icon.jpg")
-    background-size:  cover
+    background-size: cover
     background-position: center center
 .profile
   font-family: $en-accent-family
   text-align: center
-  width: 360px
+  max-width: 360px
   margin: 0 auto 180px
   padding-top: 80px
   .name

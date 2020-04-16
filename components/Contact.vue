@@ -60,37 +60,43 @@
 
 <script>
 export default {
-  data () {
+  data() {
     return {
       contactForm: {
-        name: '',
-        email: '',
-        message: ''
+        name: "",
+        email: "",
+        message: ""
       }
-    }
+    };
   },
   methods: {
-    async sendMail (e) {
-      e.preventDefault()
-      this.$nuxt.$loading.start()
-      const mailer = this.$firebaseFunctions.httpsCallable('sendMail')
+    async sendMail(e) {
+      e.preventDefault();
+      this.$nuxt.$loading.start();
+      const mailer = this.$firebaseFunctions.httpsCallable("sendMail");
       try {
-        await mailer(this.contactForm)
-        this.$toast.success('お問い合わせを受け付けました。ありがとうございました。', { duration: 5000 })
-        this.resetForm()
+        await mailer(this.contactForm);
+        this.$toast.success(
+          "お問い合わせを受け付けました。ありがとうございました。",
+          { duration: 5000 }
+        );
+        this.resetForm();
       } catch (err) {
-        this.$toast.error('お問い合わせに失敗しました。時間をおいて再度お試しください。', { duration: 5000 })
-        console.log(err)
-        throw err
+        this.$toast.error(
+          "お問い合わせに失敗しました。時間をおいて再度お試しください。",
+          { duration: 5000 }
+        );
+        console.log(err);
+        throw err;
       } finally {
-        this.$nuxt.$loading.finish()
+        this.$nuxt.$loading.finish();
       }
     },
-    resetForm () {
-      this.contactForm = { name: '', email: '', message: '' }
+    resetForm() {
+      this.contactForm = { name: "", email: "", message: "" };
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -128,8 +134,14 @@ export default {
     margin-top: 60px
     .item
       display: inline
-      font-size: 36px
-      margin: 0 15px
       .link
         color: $primary-grey
+    @include media-breakpoint-up(sm)
+      .item
+        font-size: 36px
+        margin: 0 15px
+    @include media-breakpoint-up(xs)
+      .item
+        font-size: 30px
+        margin: 0 10px
 </style>

@@ -2,7 +2,7 @@
   .blog
     .blog-wrapper.container
       .blog-post.row
-        .offset-1.col-10
+        .offset-sm-1.col-sm-10
           .blog-post-header
             .image(
               :style="`background-image: url(${blogPost.fields.eyecatch.fields.file.url})`"
@@ -24,11 +24,11 @@ export default {
     }
   },
   methods: {
-    parseCreatedAt (datetime) {
-      return this.$dateFormat(datetime, 'yyyy.MM.dd')
+    parseCreatedAt(datetime) {
+      return this.$dateFormat(datetime, "yyyy.MM.dd");
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>
@@ -44,12 +44,10 @@ export default {
           padding-bottom: 60%
           background-size: cover
           background-position: center center
-          margin-bottom: 20px
         .title
           display: block
           color: black
           font-family: $ja-accent-family
-          font-size: 28px
           text-decoration: none
           margin-bottom: 3px
         .created-at
@@ -57,6 +55,19 @@ export default {
           font-size: 14px
       .markdown-body
         color: $primary-grey
-        font-size: 16px
         line-height: 2
+    @include media-breakpoint-up(sm)
+      .image
+        margin-bottom: 20px
+      .title
+        font-size: 28px
+      .markdown-body
+        font-size: 16px
+    @include media-breakpoint-down(xs)
+      .image
+        margin-bottom: 10px
+      .title
+        font-size: 20px
+      .markdown-body
+        font-size: 14px
 </style>
