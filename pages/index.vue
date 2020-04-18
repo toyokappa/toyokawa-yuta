@@ -17,6 +17,7 @@
         description="最新のチャレンジや動向をコンテンツとしてお届け"
       )
       Blog(:blogPosts="blogPosts")
+      BlogLinkButton
     section.section.section-dark
       SectionHeader#contact(
         title="お問い合わせ"
@@ -35,6 +36,7 @@ import SectionHeader from "@/components/SectionHeader";
 import PageTop from "@/components/PageTop";
 import Resume from "@/components/Resume";
 import Blog from "@/components/Blog";
+import BlogLinkButton from "@/components/BlogLinkButton";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
@@ -45,6 +47,7 @@ export default {
     PageTop,
     Resume,
     Blog,
+    BlogLinkButton,
     Contact,
     Footer
   },
