@@ -33,7 +33,9 @@ export default {
     Contact,
     Footer
   },
-  async asyncData ({ app, params }) {
+  async asyncData ({ app, params, payload }) {
+    if (payload) return { blogPost: payload }
+
     const blogRes = await app.$ctfClient.getEntries({
       content_type: 'blog',
       'fields.slug': params.slug,

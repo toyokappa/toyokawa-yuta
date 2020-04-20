@@ -85,8 +85,13 @@ export default {
     }
   },
   generate: {
-    async routes () {
-      return await fetchBlogUrls()
+    async routes() {
+      const blogPosts = await fetchBlogUrls()
+      const urls = blogPosts.items.map(item => ({
+        route: `/blogs/${item.fields.slug}`,
+        payload: item
+      }))
+      return urls
     }
   },
   toast: {
@@ -106,7 +111,9 @@ export default {
     hostname: 'https://toyokawa-yuta.com',
     gzip: true,
     async routes() {
-      return await fetchBlogUrls()
+      const blogPosts = await fetchBlogUrls()
+      const urls = blogPosts.items.map(item => `/blogs/${item.fields.slug}`)
+      return urls
     }
   }
 }
@@ -121,6 +128,5 @@ const fetchBlogUrls = async () => {
     content_type: 'blog',
     order: '-sys.createdAt'
   })
-  const urls = blogPosts.items.map(item => `/blogs/${item.fields.slug}`)
-  return urls
+  return blogPosts
 }
