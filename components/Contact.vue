@@ -54,7 +54,7 @@
           a.link(href="https://www.youtube.com/channel/UCFecawOb06qA62iYfVQmteA" target="new")
             i.fab.fa-youtube
         li.item
-          a.link(href="instagram.com/yuta_toyokawa" target="new")
+          a.link(href="https://instagram.com/yuta_toyokawa" target="new")
             i.fab.fa-instagram
 </template>
 
