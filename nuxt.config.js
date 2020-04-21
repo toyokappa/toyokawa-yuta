@@ -86,7 +86,7 @@ export default {
   },
   generate: {
     async routes() {
-      const blogPosts = await fetchBlogUrls()
+      const blogPosts = await fetchBlogPosts()
       const urls = blogPosts.items.map(item => ({
         route: `/blogs/${item.fields.slug}`,
         payload: item
@@ -109,16 +109,11 @@ export default {
   sitemap: {
     path: '/sitemap.xml',
     hostname: 'https://toyokawa-yuta.com',
-    gzip: true,
-    async routes() {
-      const blogPosts = await fetchBlogUrls()
-      const urls = blogPosts.items.map(item => `/blogs/${item.fields.slug}`)
-      return urls
-    }
+    gzip: true
   }
 }
 
-const fetchBlogUrls = async () => {
+const fetchBlogPosts = async () => {
   const contentful = require('contentful')
   const client = contentful.createClient({
     space: process.env.CTF_SPACE_ID,
