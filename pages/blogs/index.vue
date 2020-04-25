@@ -33,12 +33,21 @@ export default {
     Contact,
     Footer
   },
-  async asyncData({ app }) {
-    const blogRes = await app.$ctfClient.getEntries({
+  async asyncData({ route, app }) {
+    let pageNum = 1;
+    if (typeof route.params.page !== "undefined") {
+      pageNum = parseInt(route.params.page);
+    }
+    const limit = 10;
+    const skip = limit * pageNum - limit;
+    let params = {
       content_type: "blog",
       order: "-fields.publishedAt",
-      limit: 10
-    });
+      limit,
+      skip
+    };
+
+    const blogRes = await app.$ctfClient.getEntries(params);
     const blogPosts = blogRes.items;
 
     return {
