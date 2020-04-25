@@ -46,7 +46,7 @@ export default {
   head() {
     const { title, description, eyecatch } = this.blogPost.fields;
     const pageTitle = `${title} | 豊川 雄太 Official Blog`;
-    const imageUrl = eyecatch.fields.file.url;
+    const imageUrl = `https:${eyecatch.fields.file.url}`;
     return {
       title: pageTitle,
       meta: [
@@ -57,7 +57,7 @@ export default {
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "article" },
-        { property: "og:image", content: `https:${imageUrl}` },
+        { property: "og:image", content: imageUrl },
         { property: "og:description", content: description }
       ]
     };
