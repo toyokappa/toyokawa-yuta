@@ -66,7 +66,8 @@ export default {
     '@nuxtjs/toast',
     '@nuxtjs/markdownit',
     '@nuxtjs/sitemap',
-    ['vue-scrollto/nuxt', { duration: 500 }]
+    ['vue-scrollto/nuxt', { duration: 500 }],
+    '@/modules/paging.js'
   ],
   styleResources: {
     sass: [
@@ -82,7 +83,8 @@ export default {
     ** You can extend webpack config here
     */
     extend(config, ctx) {
-    }
+    },
+    hardSource: true
   },
   generate: {
     async routes() {
