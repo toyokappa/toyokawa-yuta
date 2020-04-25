@@ -57,8 +57,7 @@ export default {
         { name: "twitter:description", content: description },
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "article" },
-        { property: "og:url", content: this.$route.fullpath },
-        { property: "og:image", content: imageUrl },
+        { property: "og:image", content: `https:${imageUrl}` },
         { property: "og:description", content: description }
       ]
     };
