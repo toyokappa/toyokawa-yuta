@@ -1,3 +1,17 @@
+const pageLimit = 3
+
+const fetchBlogRes = async () => {
+  const contentful = require('contentful')
+  const client = contentful.createClient({
+    space: process.env.CTF_SPACE_ID,
+    accessToken: process.env.CTF_CDA_ACCESS_TOKEN
+  })
+  const blogRes = await client.getEntries({
+    content_type: 'blog',
+    order: '-fields.publishedAt'
+  })
+  return blogRes
+}
 
 export default {
   mode: 'universal',
@@ -32,6 +46,7 @@ export default {
     firebaseMessageingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
     ctfSpaceId: process.env.CTF_SPACE_ID,
     ctfCdaAccessToken: process.env.CTF_CDA_ACCESS_TOKEN,
+    pageLimit
   },
   /*
   ** Customize the progress-bar color
@@ -88,11 +103,16 @@ export default {
   },
   generate: {
     async routes() {
-      const blogPosts = await fetchBlogPosts()
-      const urls = blogPosts.items.map(item => ({
+      const blogRes = await fetchBlogRes()
+      const totalPages = Math.ceil(blogRes.total / pageLimit);
+      const pageRange = [...Array(totalPages).keys()]
+      let urls = pageRange.map(pageNum => ({
+        route: `/blogs/page/${pageNum + 1}`
+      }))
+      urls = urls.concat(blogRes.items.map(item => ({
         route: `/blogs/${item.fields.slug}`,
         payload: item
-      }))
+      })))
       return urls
     }
   },
@@ -113,17 +133,4 @@ export default {
     hostname: 'https://toyokawa-yuta.com',
     gzip: true
   }
-}
-
-const fetchBlogPosts = async () => {
-  const contentful = require('contentful')
-  const client = contentful.createClient({
-    space: process.env.CTF_SPACE_ID,
-    accessToken: process.env.CTF_CDA_ACCESS_TOKEN
-  })
-  const blogPosts = await client.getEntries({
-    content_type: 'blog',
-    order: '-sys.createdAt'
-  })
-  return blogPosts
 }

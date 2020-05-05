@@ -40,12 +40,12 @@ export default {
     Contact,
     Footer
   },
-  async asyncData({ route, app }) {
+  async asyncData({ route, app, env }) {
     let pageNum = 1;
     if (typeof route.params.page !== "undefined") {
       pageNum = parseInt(route.params.page);
     }
-    const limit = 3;
+    const limit = env.pageLimit;
     const skip = limit * pageNum - limit;
     let params = {
       content_type: "blog",
