@@ -1,4 +1,4 @@
-const pageLimit = 3
+const pageLimit = 10
 
 const fetchBlogRes = async () => {
   const contentful = require('contentful')
