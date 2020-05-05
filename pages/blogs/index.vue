@@ -4,6 +4,11 @@
     section.section
       BlogTitle
       Blog(:blogPosts="blogPosts")
+      Paging(
+        :total="blogRes.total"
+        :limit="blogRes.limit"
+        :skip="blogRes.skip"
+      )
     section.section.section-dark
       SectionHeader(
         title="お問い合わせ"
@@ -20,6 +25,7 @@
 import BlogHeader from "@/components/BlogHeader";
 import BlogTitle from "@/components/BlogTitle";
 import Blog from "@/components/Blog";
+import Paging from "@/components/Paging";
 import SectionHeader from "@/components/SectionHeader";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -29,6 +35,7 @@ export default {
     BlogHeader,
     BlogTitle,
     Blog,
+    Paging,
     SectionHeader,
     Contact,
     Footer
@@ -38,7 +45,7 @@ export default {
     if (typeof route.params.page !== "undefined") {
       pageNum = parseInt(route.params.page);
     }
-    const limit = 10;
+    const limit = 3;
     const skip = limit * pageNum - limit;
     let params = {
       content_type: "blog",
@@ -51,6 +58,7 @@ export default {
     const blogPosts = blogRes.items;
 
     return {
+      blogRes,
       blogPosts
     };
   },
