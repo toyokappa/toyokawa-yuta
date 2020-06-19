@@ -22,13 +22,13 @@
 </template>
 
 <script>
-import BlogHeader from "@/components/BlogHeader";
-import BlogTitle from "@/components/BlogTitle";
-import Blog from "@/components/Blog";
-import Paging from "@/components/Paging";
-import SectionHeader from "@/components/SectionHeader";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import BlogHeader from "@/components/parts/BlogHeader";
+import BlogTitle from "@/components/parts/BlogTitle";
+import Blog from "@/components/sections/Blog";
+import Paging from "@/components/modules/Paging";
+import SectionHeader from "@/components/parts/SectionHeader";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/global/Footer";
 
 export default {
   components: {

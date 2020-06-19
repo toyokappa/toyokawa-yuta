@@ -17,12 +17,12 @@
 </template>
 
 <script>
-import BlogHeader from "@/components/BlogHeader";
-import BlogTitle from "@/components/BlogTitle";
-import BlogPost from "@/components/BlogPost";
-import SectionHeader from "@/components/SectionHeader";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import BlogHeader from "@/components/parts/BlogHeader";
+import BlogTitle from "@/components/parts/BlogTitle";
+import BlogPost from "@/components/sections/BlogPost";
+import SectionHeader from "@/components/parts/SectionHeader";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/global/Footer";
 
 export default {
   components: {
