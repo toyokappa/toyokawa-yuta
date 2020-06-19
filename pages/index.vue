@@ -31,14 +31,14 @@
 </template>
 
 <script>
-import Header from "@/components/Header";
-import SectionHeader from "@/components/SectionHeader";
-import PageTop from "@/components/PageTop";
-import Resume from "@/components/Resume";
-import Blog from "@/components/Blog";
-import BlogLinkButton from "@/components/BlogLinkButton";
-import Contact from "@/components/Contact";
-import Footer from "@/components/Footer";
+import Header from "@/components/global/Header";
+import SectionHeader from "@/components/parts/SectionHeader";
+import PageTop from "@/components/sections/PageTop";
+import Resume from "@/components/sections/Resume";
+import Blog from "@/components/sections/Blog";
+import BlogLinkButton from "@/components/parts/BlogLinkButton";
+import Contact from "@/components/sections/Contact";
+import Footer from "@/components/global/Footer";
 
 export default {
   components: {
