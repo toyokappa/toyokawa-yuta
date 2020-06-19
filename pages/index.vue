@@ -9,7 +9,7 @@
         subtitle="Carriculum Vitae"
         description="私のこれまでの歩み"
       )
-      Resume
+      Resume(:careerItems="careerItems")
     section.section
       SectionHeader#blog(
         title="最新ブログ記事"
@@ -59,8 +59,16 @@ export default {
     });
     const blogPosts = blogRes.items;
 
+    const careerRes = await app.$ctfClient.getEntries({
+      content_type: "career",
+      order: "fields.startedAt"
+    })
+    const careerItems = careerRes.items;
+    console.log(careerItems)
+
     return {
-      blogPosts
+      blogPosts,
+      careerItems
     };
   },
   head() {
