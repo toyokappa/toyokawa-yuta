@@ -5,7 +5,7 @@
         .offset-sm-1.col-sm-10
           .blog-post-header
             .image(
-              :style="`background-image: url(${blogPost.fields.eyecatch.fields.file.url})`"
+              v-lazy:background-image="blogPost.fields.eyecatch.fields.file.url"
             )
             h1.title {{ blogPost.fields.title }}
             .created-at

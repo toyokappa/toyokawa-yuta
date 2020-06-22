@@ -1,10 +1,10 @@
 <template lang="pug">
   .welcome
-    #pageTop.page-top
+    #pageTop.page-top(v-lazy:background-image="topImage")
       .top-text
         .title I'M TOYOKAWA YUTA
         .subtitle Official Site
-      .user-icon
+      .user-icon(v-lazy:background-image="userImage")
     #profile.profile
       .name 豊川 雄太
       .name-alpha Toyokawa Yuta
@@ -80,12 +80,25 @@
             | 活動内容については、こちらのホームページに掲載しておりますので、是非いちコンテンツとして楽しんでいただけたらと思います。
 </template>
 
+<script>
+import topImage from "@/assets/page_top.jpg"
+import userImage from "@/assets/user_icon.jpg"
+
+export default {
+  data() {
+    return {
+      topImage,
+      userImage
+    }
+  }
+}
+</script>
+
 <style lang="sass" scoped>
 .page-top
   position: relative
   width: 100%
   height: 100vh
-  background-image: url("~assets/page_top.jpg")
   background-size: cover
   background-position: center center
   margin-bottom: 100px
@@ -124,7 +137,6 @@
     height: 150px
     border-radius: 50%
     border: 3px solid white
-    background-image: url("~assets/user_icon.jpg")
     background-size: cover
     background-position: center center
 .profile

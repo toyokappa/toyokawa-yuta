@@ -5,7 +5,7 @@
         .col-lg-6(:class="index % 2 == 0 ? 'order-lg-1' : 'order-lg-2'")
           n-link.image(
             :to="`/blogs/${post.fields.slug}`"
-            :style="`background-image: url(${post.fields.eyecatch.fields.file.url})`"
+            v-lazy:background-image="post.fields.eyecatch.fields.file.url"
           )
         .col-lg-6(:class="index % 2 == 0 ? 'order-lg-2' : 'order-lg-1'")
           .header
