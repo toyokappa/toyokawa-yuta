@@ -99,7 +99,8 @@ export default {
     */
     extend(config, ctx) {
     },
-    hardSource: true
+    // NOTE: デプロイ時に悪さをするっぽいので一旦解除
+    // hardSource: true
   },
   generate: {
     async routes() {
