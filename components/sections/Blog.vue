@@ -17,7 +17,10 @@
 </template>
 
 <script>
+import datetimeParserMixin from "@/components/mixins/datetimeParserMixin";
+
 export default {
+  mixins: [datetimeParserMixin],
   props: {
     blogPosts: {
       type: Array,
@@ -27,9 +30,6 @@ export default {
   methods: {
     parseDescription(text) {
       return text.replace(/\n/g, "<br>");
-    },
-    parseCreatedAt(datetime) {
-      return this.$dateFormat(datetime, "yyyy.MM.dd");
     }
   }
 };

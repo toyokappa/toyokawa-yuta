@@ -3,7 +3,13 @@
     BlogHeader
     section.section
       BlogTitle
-      BlogPost(:blogPost="blogPost")
+      BlogPost(
+        :blogPost="blogPost"
+      )
+      NextPrev(
+        :nextPost="nextPost"
+        :prevPost="prevPost"
+      )
     section.section.section-dark
       SectionHeader(
         title="お問い合わせ"
@@ -20,6 +26,7 @@
 import BlogHeader from "@/components/parts/BlogHeader";
 import BlogTitle from "@/components/parts/BlogTitle";
 import BlogPost from "@/components/sections/BlogPost";
+import NextPrev from "@/components/modules/NextPrev";
 import SectionHeader from "@/components/parts/SectionHeader";
 import Contact from "@/components/sections/Contact";
 import Footer from "@/components/global/Footer";
@@ -29,6 +36,7 @@ export default {
     BlogHeader,
     BlogTitle,
     BlogPost,
+    NextPrev,
     SectionHeader,
     Contact,
     Footer
@@ -41,7 +49,28 @@ export default {
       "fields.slug": params.slug
     });
     const blogPost = blogRes.items[0];
-    return { blogPost };
+
+    const prevRes = await app.$ctfClient.getEntries({
+      content_type: "blog",
+      "sys.createdAt[lt]": blogPost.sys.createdAt,
+      order: "-sys.createdAt",
+      limit: 1
+    })
+    const prevPost = prevRes.items[0]
+
+    const nextRes = await app.$ctfClient.getEntries({
+      content_type: "blog",
+      "sys.createdAt[gt]": blogPost.sys.createdAt,
+      order: "sys.createdAt",
+      limit: 1
+    })
+    const nextPost = nextRes.items[0]
+
+    return {
+      blogPost,
+      prevPost,
+      nextPost
+    };
   },
   head() {
     const { title, description, eyecatch } = this.blogPost.fields;

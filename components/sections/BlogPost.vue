@@ -16,16 +16,14 @@
 </template>
 
 <script>
+import datetimeParserMixin from "@/components/mixins/datetimeParserMixin";
+
 export default {
+  mixins: [datetimeParserMixin],
   props: {
     blogPost: {
       type: Object,
       required: true
-    }
-  },
-  methods: {
-    parseCreatedAt(datetime) {
-      return this.$dateFormat(datetime, "yyyy.MM.dd");
     }
   }
 };
