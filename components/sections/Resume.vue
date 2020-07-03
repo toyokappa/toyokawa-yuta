@@ -1,44 +1,41 @@
 <template lang="pug">
   .resume
     .cv-wrapper.container
-      .row.cv
+      .row.cv(v-for="(item, index) in careerItems" :key="index")
         .col-lg-3
-          h3.headline-title CARRER
+          h3.headline-title
+            span(v-if="index === 0") CAREER
         .col-lg-9.cv-entry
-          h4.company バリューコマース株式会社
+          h4.company {{ item.fields.companyName }}
           .profile
             i.far.fa-id-badge.mr-2
-            | Marketing Consultant, Bussiness Developer, Corporate Planning
+            | {{ item.fields.position }}
           .period
             i.far.fa-calendar-alt.mr-2
-            | 2013.4 - 2015.3
+            | {{ parseDate(item.fields.startedAt) }} - {{ parseDate(item.fields.endedAt) }}
           .description
-            | 広告営業、マーケティング、新規事業立ち上げ、経営企画など幅広い分野を経験し実績を残す。
-      .row.cv
-        .offset-lg-3
-        .col-lg-9.cv-entry
-          h4.company 株式会社JAC Rectuitment
-          .profile
-            i.far.fa-id-badge.mr-2
-            | Carrer Consultant, Recruiting Consultant
-          .period
-            i.far.fa-calendar-alt.mr-2
-            | 2015.4 - 2017.9
-          .description
-            | Web・IT業界のキャリアコンサルタントとしてミドル層の転職支援を行う。また、企業側の採用コンサルタントとして、採用活動の活性化、優秀な人材との結びつける提案を実施。
-      .row.cv
-        .offset-lg-3
-        .col-lg-9.cv-entry
-          h4.company しくみ製作所株式会社
-          .profile
-            i.far.fa-id-badge.mr-2
-            | Web Enginner, Recruiting Innovator
-          .period
-            i.far.fa-calendar-alt.mr-2
-            | 2017.10 - 現在
-          .description
-            | 未経験からフルリモートのRailsエンジニアとして経験を積む。また、2019年1月から採用マネージャーを兼務し、人事制度、採用活動の改善にも貢献。
+            | {{ item.fields.description }}
 </template>
+
+<script>
+export default {
+  props: {
+    careerItems: {
+      type: Array,
+      required: true
+    }
+  },
+  methods: {
+    parseDate(datetime) {
+      if (datetime) {
+        return this.$dateFormat(datetime, "yyyy.MM");
+      } else {
+        return "現在"
+      }
+    }
+  }
+}
+</script>
 
 <style lang="sass" scoped>
 .resume
