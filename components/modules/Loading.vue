@@ -1,5 +1,5 @@
 <template lang="pug">
-  .loading-page(v-if="loading" ref="loading")
+  .loading-page(v-show="loading" ref="loading")
     .spinner
       .bounce1
       .bounce2
