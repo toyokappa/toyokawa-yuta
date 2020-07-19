@@ -52,7 +52,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  // loading: '@/components/modules/Loading.vue',
+  loading: '@/components/modules/Loading.vue',
   /*
   ** Global CSS
   */
