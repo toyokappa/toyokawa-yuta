@@ -23,6 +23,7 @@ export default {
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no' },
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' },
+      { property: 'fb:app_id', content: '328198145005843' },
       { name: 'msapplication-TileColor', content: '#00aba9' },
       { name: 'theme-color', content: '#1f2233' },
     ],
@@ -51,7 +52,7 @@ export default {
   /*
   ** Customize the progress-bar color
   */
- loading: '@/components/modules/Loading.vue',
+  loading: '@/components/modules/Loading.vue',
   /*
   ** Global CSS
   */

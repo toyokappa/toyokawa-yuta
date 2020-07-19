@@ -55,16 +55,16 @@ export default {
       "sys.createdAt[lt]": blogPost.sys.createdAt,
       order: "-sys.createdAt",
       limit: 1
-    })
-    const prevPost = prevRes.items[0]
+    });
+    const prevPost = prevRes.items[0];
 
     const nextRes = await app.$ctfClient.getEntries({
       content_type: "blog",
       "sys.createdAt[gt]": blogPost.sys.createdAt,
       order: "sys.createdAt",
       limit: 1
-    })
-    const nextPost = nextRes.items[0]
+    });
+    const nextPost = nextRes.items[0];
 
     return {
       blogPost,
@@ -76,6 +76,7 @@ export default {
     const { title, description, eyecatch } = this.blogPost.fields;
     const pageTitle = `${title} | 豊川 雄太 Official Blog`;
     const imageUrl = `https:${eyecatch.fields.file.url}`;
+    const pageUrl = `https://toyokawa-yuta.com/${this.$route.path}`;
     return {
       title: pageTitle,
       meta: [
@@ -87,7 +88,8 @@ export default {
         { property: "og:title", content: pageTitle },
         { property: "og:type", content: "article" },
         { property: "og:image", content: imageUrl },
-        { property: "og:description", content: description }
+        { property: "og:description", content: description },
+        { property: "og:url", content: pageUrl }
       ]
     };
   }
