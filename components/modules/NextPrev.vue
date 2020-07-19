@@ -4,21 +4,23 @@
       .offset-sm-1.col-sm-10
         .row
           .col-6
-            .next-post(v-if="nextPost")
-              n-link(:to="`/blogs/${nextPost.fields.slug}`")
-                .post-image(v-lazy:background-image="nextPost.fields.eyecatch.fields.file.url")
-                .post-title {{ nextPost.fields.title }}
-                .post-created-at
-                  i.far.fa-calendar-alt.mr-2
-                  span {{ parseCreatedAt(nextPost.sys.createdAt) }}
+            client-only
+              .next-post(v-if="nextPost")
+                n-link(:to="`/blogs/${nextPost.fields.slug}`")
+                  .post-image(v-lazy:background-image="nextPost.fields.eyecatch.fields.file.url")
+                  .post-title {{ nextPost.fields.title }}
+                  .post-created-at
+                    i.far.fa-calendar-alt.mr-2
+                    span {{ parseCreatedAt(nextPost.sys.createdAt) }}
           .col-6
-            .prev-post(v-if="prevPost")
-              n-link(:to="`/blogs/${prevPost.fields.slug}`")
-                .post-image(v-lazy:background-image="prevPost.fields.eyecatch.fields.file.url")
-                .post-title {{ prevPost.fields.title }}
-                .post-created-at
-                  i.far.fa-calendar-alt.mr-2
-                  span {{ parseCreatedAt(prevPost.sys.createdAt) }}
+            client-only
+              .prev-post(v-if="prevPost")
+                n-link(:to="`/blogs/${prevPost.fields.slug}`")
+                  .post-image(v-lazy:background-image="prevPost.fields.eyecatch.fields.file.url")
+                  .post-title {{ prevPost.fields.title }}
+                  .post-created-at
+                    i.far.fa-calendar-alt.mr-2
+                    span {{ parseCreatedAt(prevPost.sys.createdAt) }}
 </template>
 
 <script>
@@ -34,7 +36,7 @@ export default {
       type: Object
     }
   }
-}
+};
 </script>
 
 <style lang="sass" scoped>

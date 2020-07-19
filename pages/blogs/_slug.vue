@@ -6,6 +6,10 @@
       BlogPost(
         :blogPost="blogPost"
       )
+      NextPrev(
+        :nextPost="nextPost"
+        :prevPost="prevPost"
+      )
     section.section.section-dark
       SectionHeader(
         title="お問い合わせ"
